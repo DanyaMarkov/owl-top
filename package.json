@@ -1,0 +1,38 @@
+{
+    "name": "top-app",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "debug": "cross-env NODE_OPTIONS='--inspect' next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "stylelint": "stylelint \"**/*.css\"",
+        "prepare": "husky install"
+    },
+    "dependencies": {
+        "axios": "^1.6.2",
+        "date-fns": "^2.30.0",
+        "framer-motion": "^10.16.16",
+        "next": "12.3.4",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-hook-form": "^7.49.2"
+    },
+    "devDependencies": {
+        "@svgr/webpack": "^8.1.0",
+        "@types/classnames": "^2.3.1",
+        "@types/node": "^20.9.0",
+        "@types/react": "^18.2.37",
+        "babel-eslint": "^10.1.0",
+        "classnames": "^2.3.2",
+        "cross-env": "^7.0.3",
+        "eslint": "^8.54.0",
+        "eslint-config-next": "12.3.4",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-prettier": "^5.0.1",
+        "husky": "^8.0.3",
+        "typescript": "^5.2.2"
+    }
+}

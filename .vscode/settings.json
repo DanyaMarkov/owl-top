@@ -1,0 +1,10 @@
+{
+    "eslint.workingDirectories": [
+        ".",
+        "./pages"
+    ],
+    "eslint.trace.server": "messages",
+    "eslint.debug": true,
+    "eslint.run": "onSave",
+    "eslint.runtime": ""
+}
