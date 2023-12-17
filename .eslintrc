@@ -4,8 +4,6 @@
 	"plugins": [
 		"@typescript-eslint"
 	],
-    "eslint.validate": [ "javascript", "javascriptreact", "html", "typescriptreact" ],
-
 	"rules": {
 		"semi": "off",
 		"@typescript-eslint/semi": [
