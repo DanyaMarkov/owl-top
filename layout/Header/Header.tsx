@@ -1,12 +1,12 @@
-import { HeaderProps } from "./Header.props";
-import styles from "./Header.module.css";
-import Logo from "../logo.svg";
-import cn from "classnames";
-import { ButtonIcon } from "../../components/ButtonIcon/ButtonIcon";
-import { motion, useReducedMotion } from "framer-motion";
-import { Sidebar } from "../Sidebar/Sidebar";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { HeaderProps } from './Header.props';
+import styles from './Header.module.css';
+import Logo from '../logo.svg';
+import cn from 'classnames';
+import { ButtonIcon } from '../../components/ButtonIcon/ButtonIcon';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Sidebar } from '../Sidebar/Sidebar';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
     const [isOpened, setIsOpened] = useState<boolean>(false);
@@ -27,7 +27,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
         },
         closed: {
             opacity: shouldReduceMotion ? 1 : 0,
-            x: "100%",
+            x: '100%',
         },
     };
 
@@ -38,9 +38,8 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
             <motion.div
                 className={styles.mobileMenu}
                 variants={variants}
-                initial={"closed"}
-                animate={isOpened ? "opened" : "closed"}
-            >
+                initial={'closed'}
+                animate={isOpened ? 'opened' : 'closed'}>
                 <Sidebar />
                 <ButtonIcon
                     className={styles.menuClose}

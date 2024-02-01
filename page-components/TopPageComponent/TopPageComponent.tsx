@@ -1,14 +1,18 @@
-import { Advantages, Htag, P, Product, Sort, Tag } from "../../components";
-import { TopPageComponentProps } from "./TopPageComponent.props";
-import styles from "./TopPageComponent.module.css";
-import { HhData } from "../../components";
-import { TopLevelCategory } from "../../interfaces/page.interface";
-import { SortEnum } from "../../components/Sort/Sort.props";
-import { useEffect, useReducer } from "react";
-import { sortReducer } from "./sort.reducer";
-import { useReducedMotion } from "framer-motion";
+import { Advantages, Htag, P, Product, Sort, Tag } from '../../components';
+import { TopPageComponentProps } from './TopPageComponent.props';
+import styles from './TopPageComponent.module.css';
+import { HhData } from '../../components';
+import { TopLevelCategory } from '../../interfaces/page.interface';
+import { SortEnum } from '../../components/Sort/Sort.props';
+import { useEffect, useReducer } from 'react';
+import { sortReducer } from './sort.reducer';
+import { useReducedMotion } from 'framer-motion';
 
-export const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps): JSX.Element => {
+export const TopPageComponent = ({
+    page,
+    products,
+    firstCategory,
+}: TopPageComponentProps): JSX.Element => {
     const [{ products: sortedProducts, sort }, dispathSort] = useReducer(sortReducer, {
         products,
         sort: SortEnum.Rating,
@@ -20,7 +24,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
     };
 
     useEffect(() => {
-        dispathSort({ type: "reset", initialState: products });
+        dispathSort({ type: 'reset', initialState: products });
     }, [products]);
 
     return (
@@ -28,7 +32,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
             <div className={styles.title}>
                 <Htag tag="h1">{page.title}</Htag>
                 {products && (
-                    <Tag color="grey" size="m" aria-label={products.length + "элементов"}>
+                    <Tag color="grey" size="m" aria-label={products.length + 'элементов'}>
                         {products.length}
                     </Tag>
                 )}
@@ -37,7 +41,12 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
             <div role="list">
                 {sortedProducts &&
                     sortedProducts.map((p) => (
-                        <Product role="listitem" layout={shouldReduceMotion ? false : true} key={p._id} product={p} />
+                        <Product
+                            role="listitem"
+                            layout={shouldReduceMotion ? false : true}
+                            key={p._id}
+                            product={p}
+                        />
                     ))}
             </div>
             <div className={styles.hhTitle}>
@@ -53,7 +62,9 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
                     <Advantages advantages={page.advantages} />
                 </>
             )}
-            {page.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{ __html: page.seoText }} />}
+            {page.seoText && (
+                <div className={styles.seo} dangerouslySetInnerHTML={{ __html: page.seoText }} />
+            )}
             <Htag tag="h2">Получаемые навыки</Htag>
             {page.tags.map((t) => (
                 <Tag key={t} color="primary">

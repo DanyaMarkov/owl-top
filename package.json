@@ -10,6 +10,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
         "stylelint": "stylelint \"**/*.css\"",
         "prepare": "husky install"
     },
@@ -36,5 +37,16 @@
         "eslint-plugin-prettier": "^5.0.1",
         "husky": "^8.0.3",
         "typescript": "^5.2.2"
+    },
+    "eslintConfig": {
+        "extends": "eslint:recommended",
+        "parserOptions": {
+            "ecmaVersion": 2018
+        },
+        "rules": {
+            "semi": "error",
+            "no-console": "warn",
+            "no-var": "warn"
+        }
     }
 }

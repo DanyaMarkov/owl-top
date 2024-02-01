@@ -1,6 +1,6 @@
-import { AppProps } from "next/dist/shared/lib/router/router";
-import "../styles/globals.css";
-import Head from "next/head";
+import { AppProps } from 'next/dist/shared/lib/router/router';
+import '../styles/globals.css';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
     return (

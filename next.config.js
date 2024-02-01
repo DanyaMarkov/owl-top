@@ -1,11 +1,11 @@
 module.exports = {
     images: {
-        domains: ["courses-top.ru", "courses-top.ruhttp"],
+        domains: ['courses-top.ru', 'courses-top.ruhttp'],
     },
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/,
-            use: ["@svgr/webpack"],
+            use: ['@svgr/webpack'],
         });
 
         return config;
